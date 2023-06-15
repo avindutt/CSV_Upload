@@ -8,6 +8,10 @@ const csvSchema = mongoose.Schema({
     path: {
         type: String,
         required: true
+    },
+    originalname: {
+        type: String,
+        required: true
     }
 }, {
     timestamps: true

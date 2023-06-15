@@ -33,10 +33,19 @@ const storage = multer.diskStorage({
         
         const filename = req.file.filename;
         const path = '../uploads/' + req.file.filename;
+        const originalname = req.file.originalname;
+
+        // adding a check- no files other than csv are allowed
+        if(req.file.mimetype !== 'text/csv'){
+          return res.send('400', {
+            message: 'Only CSV files are allowed'
+          })
+        }
         
         const csv = await CSV.create({
         filename,
-        path
+        path,
+        originalname
         });
         await csv.save();
         return res.redirect('/');

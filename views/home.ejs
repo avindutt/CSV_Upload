@@ -27,10 +27,10 @@
             <% for(file of csv) { %>
 
                 <li>
-                    <div>
-                    <%=file.filename%>
+                    <div style="position: relative; left: 27vw; width: max-content;">
+                    <%=file.originalname%>
                     </div>
-                    <div>
+                    <div id="preview">
                         <a href="/filepreview/<%=file._id%>">Preview</a>
                     </div>
                 </li>
