@@ -1,0 +1,54 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+text-align: center;
+padding-top: 25px;
+}
+
+p{
+    text-align: center;
+    color: grey;
+}
+
+#container{
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+#form-data{
+    margin: 0 auto;
+    height: 9em;
+    width: 45em;
+    display: flex;
+    align-items: center;
+    border: 2px dashed rgb(192, 192, 192);
+    justify-content: center;
+}
+
+#form-data button{
+    background-color: rgb(45, 137, 228);
+    font-size: medium;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 30px;
+}
+
+#form-data button:hover{
+    cursor: pointer;
+}
+
+#files-container{
+    padding: 10px;
+}
+
+#files-container li {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    list-style: none;
+    border-bottom: 1px solid grey;
+}

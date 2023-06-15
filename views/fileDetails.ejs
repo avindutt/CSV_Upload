@@ -1,0 +1,19 @@
+<table>
+    <thead>
+      <tr>
+        <% Object.keys(details[0]).forEach(function(key) { %>
+          <th><%= key %></th>
+        <% }); %>
+      </tr>
+    </thead>
+    <tbody>
+      <% details.forEach(function(obj) { %>
+        <tr>
+          <% Object.keys(obj).forEach(function(key) { %>
+            <td><%= obj[key] %></td>
+          <% }); %>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  

@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+
+        <link rel="stylesheet" href="/css/home.css">
+    </head>
+
+    <body>
+        <h1>Upload your File Here</h1>
+
+        <p>Add and preview the contents of a CSV file</p>
+
+        <div id="container">
+            <div id="form-data">
+                <form action="/uploads" enctype="multipart/form-data" method="post">
+                    <label for="csvFile">Select a file to upload</label>
+                    <input type="file" name="csvFile">
+                    <button type="submit">Upload</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="files-container">
+            <h2>Uploaded Files</h2>
+            <% for(file of csv) { %>
+
+                <li>
+                    <div>
+                    <%=file.filename%>
+                    </div>
+                    <div>
+                        <a href="/filepreview/<%=file._id%>">Preview</a>
+                    </div>
+                </li>
+
+            <% } %>
+        </div>
+
+    </body>
+</html>
