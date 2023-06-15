@@ -1,19 +1,50 @@
-<table>
-    <thead>
-      <tr>
-        <% Object.keys(details[0]).forEach(function(key) { %>
-          <th><%= key %></th>
-        <% }); %>
-      </tr>
-    </thead>
-    <tbody>
-      <% details.forEach(function(obj) { %>
-        <tr>
-          <% Object.keys(obj).forEach(function(key) { %>
-            <td><%= obj[key] %></td>
+<html>
+  <head>
+    <title>
+      <%=title%>
+    </title>
+
+    <link rel="stylesheet" href="/css/file.css">
+  </head>
+
+  <body>
+
+    <h1><%= originalname %></h1>
+    <input type="text" id="searchInput" placeholder="Search...">
+      <table id="data-container">
+        <thead>
+          <tr>
+            <% Object.keys(details[0]).forEach(function(key) { %>
+              <th><%= key %></th>
+            <% }); %>
+          </tr>
+        </thead>
+        <tbody>
+          <% details.forEach(function(obj) { %>
+            <tr class="data-row">
+              <% Object.keys(obj).forEach(function(key) { %>
+                <td><%= obj[key] %></td>
+              <% }); %>
+            </tr>
           <% }); %>
-        </tr>
-      <% }); %>
-    </tbody>
-  </table>
-  
+        </tbody>
+      </table>
+
+      <script>
+        const searchInput = document.getElementById('searchInput');
+        const dataRows = document.getElementsByClassName('data-row');
+
+        searchInput.addEventListener('input', function() {
+          const searchText = searchInput.value.toLowerCase();
+
+          Array.from(dataRows).forEach(function(row) {
+            const rowData = row.textContent.toLowerCase();
+            const matchFound = rowData.includes(searchText);
+            row.style.display = matchFound ? 'table-row' : 'none';
+          });
+        });
+      </script>
+
+  </body>
+
+</html>

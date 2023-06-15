@@ -25,8 +25,9 @@ module.exports.index = async function(req, res) {
       const details = results;
       results = [];
           return res.render('fileDetails', {
-              title: 'Preview',
-              details
+              title: 'File Preview',
+              details,
+              originalname: filePreview.originalname
           });
     });
 }
