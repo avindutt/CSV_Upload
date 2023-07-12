@@ -3,6 +3,9 @@ const port = 8000;
 const app = express();
 const path = require('path');
 const csv = require('csv-parser');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const db = require('./config/mongoose');
 
